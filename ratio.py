@@ -2,6 +2,7 @@ import chess
 import chess.uci
 import yaml
 import os.path
+import time
 
 # Load some external config file
 with open('ratio.yaml') as fp:
@@ -71,9 +72,12 @@ print("Running stockfish to depth {}.".format(sf_depth))
 sf.go(depth=sf_depth)
 
 sf_nps = sf_info.info['nps']
-
+sf.quit()
 
 print("{} nps".format(sf_nps))
+
+# Pause to settle system
+time.sleep(3)
 
 # get the leela nps
 
@@ -90,6 +94,7 @@ print("Running leela to {} nodes.".format(leela_nodes))
 lc.go(nodes=leela_nodes)
 
 lc_nps = lc_info.info['nps']
+lc.quit()
 
 print("{} nps".format(lc_nps))
 
@@ -111,6 +116,6 @@ print("Leela Ratio:         {}".format(round(ratio,3)))
 print("Leelafish Ratio:     {}".format(round(lf_ratio,3)))
 print("===")
 
-# clean up
-lc.quit()
-sf.quit()
+
+
+
