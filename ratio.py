@@ -71,7 +71,7 @@ print("Running stockfish to depth {}.".format(sf_depth))
 sf.go(depth=sf_depth)
 
 sf_nps = sf_info.info['nps']
-sf.quit()
+
 
 print("{} nps".format(sf_nps))
 
@@ -86,11 +86,10 @@ lc_info = chess.uci.InfoHandler()
 
 lc.info_handlers.append(lc_info)
 
-print("Running leela to nodes {}.".format(leela_nodes))
+print("Running leela to {} nodes.".format(leela_nodes))
 lc.go(nodes=leela_nodes)
 
 lc_nps = lc_info.info['nps']
-lc.quit()
 
 print("{} nps".format(lc_nps))
 
@@ -98,4 +97,18 @@ print("{} nps".format(lc_nps))
 
 ratio = 875.0 * lc_nps / sf_nps
 
-print("Leela Ratio: {}".format(round(ratio,3)))
+print("\n===")
+print("GPU:\t{}".format(conf["gpu"]))
+print("Stockfish threads:\t{}".format(sf_threads))
+print("Stockfish hash:\t{}".format(sf_hash))
+print("Stockfish depth:\t{}".format(sf_depth))
+print("Stockfish nps: {}".format(sf_nps))
+print("Leela threads:\t{}".format(leela_threads))
+print("Leela nodes:\t{}".format(leela_nodes))
+print("Leela nps: {}".format(lc_nps))
+print("Leela Ratio:\t{}".format(round(ratio,3)))
+print("===")
+
+# clean up
+lc.quit()
+sf.quit()
