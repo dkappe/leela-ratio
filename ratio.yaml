@@ -1,0 +1,11 @@
+stockfish:
+  cmd: /home/dkappe/work/chess/Arena/Engines/Stockfish9/stockfish-9-64
+  threads: 4
+  hash: 1024
+  depth: 27
+leela:
+  cmd: /home/dkappe/work/chess/Arena/Engines/LeelaZero/192/bender
+  threads: 2
+  weights: /home/dkappe/work/chess/Arena/Engines/LeelaZero/192/weights_11258.txt.gz
+  nodes: 200000
+
