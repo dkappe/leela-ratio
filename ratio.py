@@ -99,16 +99,16 @@ ratio = 875.0 * lc_nps / sf_nps
 lf_ratio = 2048.0 * lc_nps / sf_nps
 
 print("\n===")
-print("GPU:\t\t\t{}".format(conf["gpu"]))
-print("Stockfish threads:\t{}".format(sf_threads))
-print("Stockfish hash:\t\t{}".format(sf_hash))
-print("Stockfish depth:\t{}".format(sf_depth))
-print("Stockfish nps:\t\t{}".format(sf_nps))
-print("Leela threads:\t\t{}".format(leela_threads))
-print("Leela nodes:\t\t{}".format(leela_nodes))
-print("Leela nps:\t\t{}".format(lc_nps))
-print("Leela Ratio:\t\t{}".format(round(ratio,3)))
-print("Leelafish Ratio:\t{}".format(round(lf_ratio,3)))
+print("GPU:                 {}".format(conf["gpu"]))
+print("Stockfish threads:   {}".format(sf_threads))
+print("Stockfish hash:      {}".format(sf_hash))
+print("Stockfish depth:     {}".format(sf_depth))
+print("Stockfish nps:       {}".format(sf_nps))
+print("Leela threads:       {}".format(leela_threads))
+print("Leela nodes:         {}".format(leela_nodes))
+print("Leela nps:           {}".format(lc_nps))
+print("Leela Ratio:         {}".format(round(ratio,3)))
+print("Leelafish Ratio:     {}".format(round(lf_ratio,3)))
 print("===")
 
 # clean up
