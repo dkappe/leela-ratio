@@ -10,6 +10,11 @@ Also, they search roughly the same number of nodes. Roughly.
 If you're planning on running Ethereal with 4 threads and 1GB hash, then you should compute the Leela
 Ratio with the same parameters for Stockfish.
 
+## CONSISTENCY
+
+To be consistent as a benchmark, you should use a t10 network like 11248 and sf8. This will allow you to compare
+performance over time.
+
 ## Monster Machines
 
 If you have a truly monster machine for either CPU or GPU, you may want to increase the depth or nodes in the YAML file,
